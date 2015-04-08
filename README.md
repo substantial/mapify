@@ -44,13 +44,28 @@ Drop the Mapify folder in your Assets directory.
 
 # Usage
 
-1. Create a text map like this one: [test.txt](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Maps/test.txt)
-2. Add an empty gameObject to your scene and name it something memorable like 
-   `GameInitializer`
-3. Add a `TileRepository` script to your game scene and define some glyph mappings 
+1. Create a text map like this one
+  ![test.txt](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Maps/test.txt)
+2. Add a `TileRepository` script to your game scene somewhere and define some glyph mappings 
    like x -> WallPrefab, 1 -> PlayerPrefab, etc. 
-   [Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/wired.png)
-4. Create a script [like this](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Scripts/GameInitializer.cs) that tells Mapify about your text map and tile repository
+   ![Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/wired.png)
+3. Tell Mapify about your text file and tile repository
+```
+using UnityEngine;
+using System.Collections;
+using Substantial;
+
+public class GameInitializer : MonoBehaviour {
+  public TextAsset LevelAsset;
+  public TileRepository TileRepository;
+  public Transform LevelContainer;
+  public float TileSize = 1.0f;
+
+  private void Start() {
+    Mapify.Generate(LevelAsset.text, LevelContainer, TileRepository, TileSize, MapifyLayout.Vertical);
+  }
+}
+```
 
 Run the scene. You're done.
 

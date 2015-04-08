@@ -38,9 +38,40 @@ But seriously, here's some real features:
 * Automatically detects width and height of your level and centers it in the
   container you pass in
 
+# Installation
+
+Drop the Mapify folder in your Assets directory.
+
+# Usage
+
+1. Create a text map like this one: [test.txt](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Maps/test.txt)
+2. Add an empty gameObject to your scene and name it something memorable like 
+   `GameInitializer`
+3. Add a `TileRepository` script to your game scene and define some glyph mappings 
+   like x -> WallPrefab, 1 -> PlayerPrefab, etc. 
+   [Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/wired.png)
+4. Create a script [like this](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Scripts/GameInitializer.cs) that tells Mapify about your text map and tile repository
+
+Run the scene. You're done.
+
+![Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/screenshot.png)
+
+# Example project
+
+Check out https://github.com/substantial/mapify-example
+
+# Tips and Tricks
+
+You can use this tool however you want, but the author strongly recommends working
+with larger prefab tile sizes than smaller.  For example, if your tile size is 
+set to 32x32, each tile will be 1024 times less work to place than the same map with 
+1x1 prefabs. This is good for Unity (as 10,000 gameobjects will ruin your FPS) and 
+it's good for you because creating levels with 1x1 tiles (like we did in Dungeon 
+Highway 1) can be... tedious.
+
 # What it's not good at
 
-* 3d levels.  The map format is decidedly 2d. While your prefabs can of course
+* 3d. The map format is decidedly 2d. While your prefabs can of course
   have a 3rd dimension, they're going to lay out on a 2d grid and a flat 2d grid 
   sounds kind of boring for a first person shooter. Maybe it's fun, we don't know.
 * It's designed to dynamically build levels, so it's not great if you rely on things
@@ -62,37 +93,6 @@ But seriously, here's some real features:
   particular to our game though, so we pulled it out of this plugin before release...
 
   Anyway, the code isn't that complicated. Just look at it.
-
-# Installation
-
-Drop the Mapify folder in your Assets directory.
-
-# Usage
-
-1. Create a text map like this one: [test.txt](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Maps/test.txt)
-2. Add an empty gameObject to your scene and name it something memorable like 
-   `GameInitializer`
-3. Add a `TileRepository` script to your game scene and define some glyph mappings 
-   like x -> WallPrefab, 1 -> PlayerPrefab, etc. 
-   [Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/tile-repository.png)
-4. Create a script [like this](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Scripts/GameInitializer.cs) that tells Mapify about your text map and tile repository
-
-Run the scene. You're done.
-
-![Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/screenshot.png)
-
-# Example project
-
-Check out https://github.com/substantial/mapify-example
-
-# Tips and Tricks
-
-You can use this tool however you want, but the author strongly recommends working
-with larger prefab tile sizes than smaller.  For example, if your tile size is 
-set to 32x32, each tile will be 1024 times less work to place than the same map with 
-1x1 prefabs. This is good for Unity (as 10,000 gameobjects will ruin your FPS) and 
-it's good for you because creating levels with 1x1 tiles (like we did in Dungeon 
-Highway 1) can be... tedious.
 
 # Contact
 

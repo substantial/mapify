@@ -44,8 +44,22 @@ Drop the Mapify folder in your Assets directory.
 
 # Usage
 
-1. Create a text map like this one
-  ![test.txt](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Maps/test.txt)
+1. Create a text map like this:
+```
+xxxxxxxxxxxxx
+x           x
+x xxxxxxxxx x
+x x       x x
+x x xxxxx x x
+x x x   x x x
+x x x 1 x x x
+x x x   x x x
+x x xx xx x x
+x x  x    x x
+x xx xxxxxx x
+x  x        x
+xxxxxxxxxxxxx
+```
 2. Add a `TileRepository` script to your game scene somewhere and define some glyph mappings 
    like x -> WallPrefab, 1 -> PlayerPrefab, etc. 
    ![Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/wired.png)

@@ -19,7 +19,7 @@ xxxxxxxxxxxxxxxxxxxxxxx  x
 * They're fast!
 * They're cross platform and can be edited in nearly anything, even VIM or Emacs!
 * They can be stored and diffed in source control!
-* [Making levels]() is like being in a roguelike (pew, pew, pew!)
+* [Making levels](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Maps/test.txt) is like being in a roguelike (pew, pew, pew!)
 
 But seriously, here's some real features:
 
@@ -69,17 +69,17 @@ Drop the Mapify folder in your Assets directory.
 
 # Usage
 
-1. Create a text map like this one: [example.txt]()
+1. Create a text map like this one: [test.txt](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Maps/test.txt)
 2. Add an empty gameObject to your scene and name it something memorable like 
-   GameInitializer
-3. Add a TileRepository script to your game scene and define some glyph mappings 
-   like x -> WallPrefab, 1 -> PlayerPrefab, etc.
-4. Create a script like this that tells Mapify about your text map and tile 
-   repository
+   `GameInitializer`
+3. Add a `TileRepository` script to your game scene and define some glyph mappings 
+   like x -> WallPrefab, 1 -> PlayerPrefab, etc. 
+   [Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/tile-repository.png)
+4. Create a script [like this](https://raw.githubusercontent.com/substantial/mapify-example/master/app/Assets/Scripts/GameInitializer.cs) that tells Mapify about your text map and tile repository
 
 Run the scene. You're done.
 
-[Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/substantial/mapify-example/master/screens/screenshot.png)
 
 # Example project
 

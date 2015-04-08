@@ -92,36 +92,34 @@ Check out https://github.com/substantial/mapify-example
 # Tips and Tricks
 
 You can use this tool however you want, but the author strongly recommends working
-with larger prefab tile sizes than smaller.  For example, if your tile size is 
-set to 32x32, each tile will be 1024 times less work to place than the same map with 
+with larger tile sizes over smaller.  For example, if your tile size is set to 
+32x32, each tile will be 1024 times less work to place than the same map with 
 1x1 prefabs. This is good for Unity (as 10,000 gameobjects will ruin your FPS) and 
-it's good for you because creating levels with 1x1 tiles (like we did in Dungeon 
-Highway 1) can be... tedious.
+it's good for your poor wrists.
 
 # What it's not good at
 
-* 3d. The map format is decidedly 2d. While your prefabs can of course
-  have a 3rd dimension, they're going to lay out on a 2d grid and a flat 2d grid 
-  sounds kind of boring for a first person shooter. Maybe it's fun, we don't know.
-* It's designed to dynamically build levels, so it's not great if you rely on things
-  previously stored in the scene like baked lighting or navmeshes. There's nothing 
-  to stop you from running the Mapify script in the editor and saving the scene, 
-  but updating your levels sounds like a pain.
+* 3d. The map format is decidedly 2d. While your prefabs can of course have a 
+  3rd dimension, a flat 2d grid sounds sounds bad for a first person shooter. 
+  Maybe it's fun though, I don't know.
+
+* It's designed to build levels while the scene is running, so it's not great if
+  you want to rely on things previously stored in the scene like baked lighting 
+  or navmeshes. There's nothing to stop you from running the Mapify script in 
+  an editor script and saving the scene, but updating your levels sounds like 
+  painful after you do that.
+
 * There's no way to define special properties for different tiles.
 
-  For example, while X can spawn your ExitPrefab, you can't tell X that this X
-  needs to know that the next level is called "SewerLevel".  You'll have to 
-  figure out how to pass that information to ExitPrefab some other way like 
-  have talk to a singleton or static data class on start (e.g., LevelSettings.NextLevel),
-  or do something stupid like create multiple prefabs: X -> ExitToSewerPrefab, 
-  and Y -> ExitToSpacePrefab.
+  For example, while the glyph X can represent your ExitPrefab, there's no way
+  to tell your ExitPrefab (with Mapify) that the next level is called "SewerLevel".
+  You'll have to figure out how to pass that string to ExitPrefab some other way 
+  like have the prefab ask a singleton or static data class on start for its next level
+  (e.g., LevelSettings.NextLevel), or do something really crass like create 
+  multiple prefabs: `X -> ExitToSewerPrefab`, `Y -> ExitToSpacePrefab`.
 
-  That's not to say that you couldn't hack in an initializer to the tile spawner
-  that passes some custom info to every tile.  We did something similar in 
-  Dungeon Highway for telling each object what the area's Theme is. It was very 
-  particular to our game though, so we pulled it out of this plugin before release...
-
-  Anyway, the code isn't that complicated. Just look at it.
+  That's not to say that you couldn't hack in an initializer to the tile spawner.
+  Check out the code, it's not that complicated.
 
 # Contact
 

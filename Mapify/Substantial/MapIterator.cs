@@ -17,7 +17,7 @@ namespace Substantial {
         var line = map[y];
         for (var x = 0; x < line.Length; x++) {
           var character = line[x];
-          var localPosition = localPositionCalculator.Calculate(x, y, map.Length, line.Length);
+          var localPosition = localPositionCalculator.Calculate(x, y, line.Length, map.Length);
           callback(character, localPosition);
         }
       }

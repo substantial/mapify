@@ -16,7 +16,7 @@ namespace Substantial {
     public Vector3 Calculate(int x, int y, int maxX, int maxY) {
       var position = AdjustToLayout(
           x * tileOffset + CenterOffset(maxX) + halfTileOffset, 
-          y * tileOffset + CenterOffset(maxY) + halfTileOffset);
+          (y * tileOffset + CenterOffset(maxY) + halfTileOffset) * -1);
       return position;
     }
 
